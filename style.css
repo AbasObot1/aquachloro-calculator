@@ -5,11 +5,12 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     text-align: center;
+    margin-bottom: 0rem;
     background-image: url('water3.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 0rem;
+    border-radius: 5px;
 }
 h1{
     color: #FFFFFF;
@@ -68,8 +69,8 @@ h1{
 .button2 {
   appearance: button;
   background-color: transparent;
-  background-image: linear-gradient(to bottom, #fff, #f8eedb);
-  border: 0 solid #e5e7eb;
+  background-image: linear-gradient(to bottom, #417dff, #f8eedb);
+  border: 0 solid #000000;
   border-radius: .5rem;
   box-sizing: border-box;
   color: #482307;
@@ -89,7 +90,8 @@ h1{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+  box-shadow: -6px 8px 10px rgba(0, 0, 0, 0.1),0px 2px 2px rgba(81,41,10,0.2);
+  margin: 10px;
 }
 
 .button-2:active {
