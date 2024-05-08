@@ -1,0 +1,108 @@
+html, body{
+    height: 100vh;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    background-image: url('water3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0rem;
+}
+h1{
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000000;
+}
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.outPut1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: left;
+
+    background: -moz-linear-gradient(top, rgba(174,188,191,0.29) 0%, rgba(117,124,122,0.19) 50%, rgba(10,14,10,0.19) 51%, rgba(10,8,9,0.08) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(174,188,191,0.29)), color-stop(50%,rgba(117,124,122,0.19)), color-stop(51%,rgba(10,14,10,0.19)), color-stop(100%,rgba(10,8,9,0.08))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(174,188,191,0.29) 0%,rgba(117,124,122,0.19) 50%,rgba(10,14,10,0.19) 51%,rgba(10,8,9,0.08) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(174,188,191,0.29) 0%,rgba(117,124,122,0.19) 50%,rgba(10,14,10,0.19) 51%,rgba(10,8,9,0.08) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(174,188,191,0.29) 0%,rgba(117,124,122,0.19) 50%,rgba(10,14,10,0.19) 51%,rgba(10,8,9,0.08) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(174,188,191,0.29) 0%,rgba(117,124,122,0.19) 50%,rgba(10,14,10,0.19) 51%,rgba(10,8,9,0.08) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4aaebcbf', endColorstr='#140a0809',GradientType=0 );
+}
+.calInput {
+    margin-bottom: 10px;
+}
+.buttondiv{
+    text-align: center;
+}
+.button1 {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
+.button2 {
+  appearance: button;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #fff, #f8eedb);
+  border: 0 solid #e5e7eb;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #482307;
+  column-gap: 1rem;
+  cursor: pointer;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  outline: 2px solid transparent;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  text-transform: none;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+}
+
+.button-2:active {
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+  transform: translateY(0.125rem);
+}
+
+.button-2:focus {
+  box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+}
+
+footer{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}

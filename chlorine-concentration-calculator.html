@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hydrochlor Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .main-section {
+            padding: 5px;
+            margin-left: 1px;
+            margin-right: 1px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .section-2 {
+            color: #000000;
+            text-shadow: 2px 2px 4px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chlorine Concentration Calculator</h1>
+    </header>
+    <main>
+        <section class="main-section">
+            <div class="calculator">
+                <div id="outPut" class="outPut1">0</div>
+                <div class="Input1">
+                    <label for="mass">Mass of raw Chlorine added to the tank (g):</label>
+                    <input id="mass" type="number" min="0" step="0.001" oninput="validity.valid || (value = '')" class="calInput" name="mass" placeholder="write here"><br/>
+        
+                    <label for="percent">Percentage purity of raw chlorine (%):</label>
+                    <input id="percentage" type="number" min="1" step="0.1" oninput="validity.valid || (value = '')" class="calInput" name="percent" placeholder="write here"><br/>
+                    
+                    <label for="volume">Volume of raw water tank (Litres):</label><br/>
+                    <input id="volume" type="number" min="0.1" step="0.001" oninput="validity.valid || (value = '')" class="calInput" name="volume" placeholder="write here">
+                    
+                    <div class="buttondiv">
+                    <button class="button1" onclick="calConc()">Calculate</button> <button class="button1" onclick="calcClear()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-2" style="text-align: left;">
+            <h2>How this tool works</h2>
+            <p>The Aquachloro calculator is intended as a general estimation tool to assist with pool and spa chlorine 
+                treatment calculations. It uses the <a href="../pages/principle-of-chlorine-water-treatment.html">
+                principle of water treatment</a> through chlorination.<a href="../pages/disclaimer.html">Check disclaimer.</a>
+            </p>
+            <button onclick="window.location.href='./about-aquachloro-calculator.html'">Learn more</button>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <p style="color: #ed0404; text-shadow: 2px 2px 4px #000000;">Copyright &copy; 2024. Abasiama Akpan (Abas Obot)</p>
+        </footer>
+    </footer>
+
+    <script>
+        function calConc() {
+            //parseFloat to turn the input to num
+            var m = parseFloat(document.getElementById('mass').value);
+            var p = parseFloat(document.getElementById('percentage').value);
+            var v = parseFloat(document.getElementById('volume').value);
+            var con = (((m * (p / 100)) * 1000) / (v));
+            var conc= con.toFixed(2);
+            if (isNaN(m) || isNaN(p) || isNaN(v)) {
+                document.getElementById('outPut').innerHTML = "Please enter valid values for all fields.";
+            /**if (mass<0 || percentage<0 || volume<0 ){
+                document.getElementById('outPut').innerHTML = "You cannot enter negative values.";
+            }**/
+            } else {
+                document.getElementById('outPut').innerHTML = "The chlorine concentration in the tank is " + conc + "mg/L or " + conc + "ppm";
+            }
+        }
+
+        function calcClear(){
+            document.getElementById('outPut').innerHTML = "0";
+            document.getElementById('mass').value="";
+            document.getElementById('percentage').value="";
+            document.getElementById('volume').value="";
+        }
+    </script>
+</body>
+</html>
