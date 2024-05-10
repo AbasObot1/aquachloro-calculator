@@ -6,7 +6,8 @@
     <meta content='' property='og:url'/>
     <meta content='Abasiama Akpan (Abas Obot)' name='author'/>
     <meta content='Aquachloro Calculator' name='application-name'/>
-    <title>Hydrochlor Calculator</title>
+    <meta name="keywords" content="aquachloro calculator, hydrochloro calculator, chlorine calculator, water treatment, drining water" />
+    <title>Chlorine Dose Calculator</title>
     <link rel="stylesheet" href="./style.css">
     <style>
         .main-section {
@@ -27,7 +28,7 @@
 </head>
 <body>
     <header>
-        <a href="../" style="text-decoration: none;"><h1> Dose Calculator</h1></a>
+        <a href="../" style="text-decoration: none;"><h1>Chlorine Dose Calculator</h1></a>
     </header>
     <hr/>
     
@@ -35,7 +36,7 @@
             <div class="calculator">
                 <div id="outPut" class="outPut1">0</div>
                 <div class="Input1">
-                    <label for="dose">Required chlorine dose (mg/L or ppm):</label>
+                    <label for="dose">Required chlorine concentration (mg/L or ppm):</label>
                     <input id="dose" type="number" min="0" step="0.0001" oninput="validity.valid || (value = '')" class="calInput" name="dose" placeholder="write here"><br/>
         
                     <label for="percent">Percentage purity of raw chlorine (%):</label>
@@ -55,9 +56,24 @@
             <h2>How this tool works</h2>
             <p>The Aquachloro calculator is intended as a general estimation tool to assist with pool and spa chlorine 
                 treatment calculations. It uses the <a href="./pages/principle-of-chlorine-water-treatment.html">
-                principle of water treatment</a> through chlorination.<a href="./pages/disclaimer.html">Check disclaimer.</a>
+                principle of water treatment</a> through chlorination.
             </p>
             <button class="button2" onclick="window.location.href='./pages/about-aquachloro-calculator.html'">Learn more</button>
+            <br/>
+        </section>
+        <section>
+            <h3>Note</h3>
+            <ul>
+                <li>The required concentration of chlorine in the raw water: This depends on your chlorine demand. Therefore,
+                    while adding chlorine to your raw water using this app, ensure that you remember to retain residual
+                    chlorine at accepted level.
+                </li>
+                <li>Percentage purity of Chlorine: Most chlorine compounds used for water treatment
+                    come with a given percentage purity or what is called potency. For instance, calcium hypochlorites come
+                    with percentage purity of around 65 to 70 percent. Try to know the percentage purity of the chlorine
+                    compound you are using for your treatment.
+                </li>
+            </ul>
         </section>
     </main>
     <footer>
@@ -73,7 +89,7 @@
             var p = parseFloat(document.getElementById('percentage').value);
             var v = parseFloat(document.getElementById('volume').value);
             var m1 = ((d * v) / (1000 * (p / 100)));
-            var m= m1.toFixed(2);
+            var m= m1.toFixed(4);
             if (isNaN(d) || isNaN(p) || isNaN(v)) {
                 document.getElementById('outPut').innerHTML = "Please enter valid values for all fields.";
             } else {
