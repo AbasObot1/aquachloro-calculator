@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content='charset=UTF-8' http-equiv='Content-Type'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta content='' property='og:url'/>
+    <meta content='Abasiama Akpan (Abas Obot)' name='author'/>
+    <meta content='Aquachloro Calculator' name='application-name'/>
+    <meta name="keywords" content="Chlorine demand calculator, aquachloro calculator, hydrochloro calculator, chlorine calculator, water treatment, drining water" />
+    <title>Residual Chlorine Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .main-section {
+            padding: 5px;
+            margin-left: 1px;
+            margin-right: 1px;
+            /**border-radius: 10px; **/
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            
+        }
+        
+        .section-2 {
+            color: #000000;
+            text-shadow: 2px 2px 4px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../" style="text-decoration: none;"><h1>Chlorine Demand Calculator</h1></a>
+    </header>
+    <hr/>
+    
+        <section >
+            <div class="calculator">
+                <div id="outPut" class="outPut1">0</div>
+                <div class="Input1">
+                    <label for="dose">Chlorine dose (ppm or mg/L):</label>
+                    <input id="dose" type="number" min="0" step="0.01" oninput="validity.valid || (value = '')" class="calInput" name="dose" placeholder="write here"><br/>
+        
+                    <label for="residual">residual chlorine (ppm or mg/L)</label>
+                    <input id="residual" type="number" min="0" step="0.01" oninput="validity.valid || (value = '')" class="calInput" name="residual" placeholder="write here"><br/>
+                    <!----
+                    <label for="volume">Volume of raw water tank (Litres):</label><br/>
+                    <input id="volume" type="number" min="0.1" step="0.001" oninput="validity.valid || (value = '')" class="calInput" name="volume" placeholder="write here">
+                    -->
+                    <div class="buttondiv">
+                    <button class="button1" onclick="calDemand()">Calculate</button> <button class="button1" onclick="calcClear()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </section><br/><br/>
+    <main class="main-section">
+        <section class="section-2" style="text-align: left;">
+            <h2>How this tool works</h2>
+            <p>The Aquachloro calculator is intended as a general estimation tool to assist with pool and spa chlorine 
+                treatment calculations. It uses the <a href="./pages/principle-of-chlorine-water-treatment.html">
+                principle of water treatment</a> through chlorination.
+            </p>
+            <button class="button2" onclick="window.location.href='./pages/about-aquachloro-calculator.html'">Learn more</button>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <p style="color: #000000; text-shadow: 2px 2px 4px #ffffff;">Copyright &copy; 2024. Abasiama Akpan (Abas Obot)</p>
+        </footer>
+    </footer>
+
+    <script>
+        function calDemand() {
+            //parseFloat to turn the input to num
+            var d = parseFloat(document.getElementById('dose').value);
+            var r = parseFloat(document.getElementById('residual').value);
+            //var v = parseFloat(document.getElementById('volume').value);
+            //var con = (((m * (p / 100)) * 1000) / (v));
+            //var conc= con.toFixed(2);
+            var demand = (d - r);
+            var d = demand.toFixed(2);
+            if (isNaN(d) || isNaN(r)) {
+                document.getElementById('outPut').innerHTML = "Please enter valid values for all fields.";
+            }
+            if (d<0 || dose<residual){
+                document.getElementById('outPut').innerHTML = "Chlorine dose cannot be less than residual chlorine. Check your input.";
+            } else {
+                document.getElementById('outPut').innerHTML = "The chlorine demand is " + d + "ppm (or mg/L.)";
+            }
+        }
+
+        function calcClear(){
+            document.getElementById('outPut').innerHTML = "0";
+            document.getElementById('dose').value="";
+            document.getElementById('residual').value="";
+            //document.getElementById('volume').value="";
+        }
+    </script>
+</body>
+</html>
