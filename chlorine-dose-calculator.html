@@ -90,14 +90,15 @@
             var m1 = ((d * v) / (1000 * (p / 100)));
             var m= m1.toFixed(2);
             if (isNaN(d) || isNaN(p) || isNaN(v)) {
-                document.getElementById('outPut').innerHTML = "Please enter valid values for all fields.";
-            } else if(v<5){
+                document.getElementById('outPut').style.color = "red";
+                document.getElementById('outPut').innerHTML = "Warning: Please enter valid values for all fields!";
+            } /**else if(v<5){
                 document.getElementById('outPut').style.color = "red";
                 document.getElementById('outPut').innerHTML = "Warning: The value for the volume of raw water must be up to 5!";
-            } else if(m<0.5){
+            }*/ else if(m<0.5){
                 document.getElementById('outPut').style.color = "";
-                mg1 = m*1000;
-                mg = mg1.toFixed(2);
+                var mg1 = m1*1000;
+                var mg = mg1.toFixed(2);
                 document.getElementById('outPut').innerHTML = "You need " + mg + "mg of " + p + "% potency raw chlorine to get " + d + " ppm concentration in " + v + " Litres water container";
             } else {
                 document.getElementById('outPut').style.color = "";
