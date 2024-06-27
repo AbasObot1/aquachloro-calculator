@@ -6,7 +6,7 @@
     <meta content='' property='og:url'/>
     <meta content='Abasiama Akpan (Abas Obot)' name='author'/>
     <meta content='Aquachloro Calculator' name='application-name'/>
-    <meta name="keywords" content="Chlorine demand calculator, aquachloro calculator, hydrochloro calculator, chlorine calculator, water treatment, drining water" />
+    <meta name="keywords" content="Chlorine demand  calculator, aquachloro calculator, hydrochloro calculator, chlorine calculator, water treatment, drining water" />
     <title>Residual Chlorine Calculator</title>
     <link rel="stylesheet" href="./style.css">
     <style>
@@ -79,16 +79,21 @@
             var demand = (d - r);
             var d = demand.toFixed(2);
             if (isNaN(d) || isNaN(r)) {
-                document.getElementById('outPut').innerHTML = "Please enter valid values for all fields.";
-            }
-            if (d<0 || dose<residual){
+                document.getElementById('outPut').style.color = "red";
+                document.getElementById('outPut').innerHTML = "Warning: Please enter valid values for all fields!";
+            } else if(r==0 && d>0){
+                document.getElementById('outPut').innerHTML = "Chlorine demand is greater than " + d + "ppm (or mg/L)";
+            } else if (d<0 || dose<residual){
+                document.getElementById('outPut').style.color = "red";
                 document.getElementById('outPut').innerHTML = "Chlorine dose cannot be less than residual chlorine. Check your input.";
             } else {
+                document.getElementById('outPut').style.color = "";
                 document.getElementById('outPut').innerHTML = "The chlorine demand is " + d + "ppm (or mg/L.)";
             }
         }
 
         function calcClear(){
+            document.getElementById('outPut').style.color = "";
             document.getElementById('outPut').innerHTML = "0";
             document.getElementById('dose').value="";
             document.getElementById('residual').value="";
