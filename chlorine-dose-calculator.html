@@ -37,13 +37,13 @@
                 <div id="outPut" class="outPut1">0</div>
                 <div class="Input1">
                     <label for="dose">Required chlorine concentration (mg/L or ppm):</label>
-                    <input id="dose" type="number" min="0.002" step="0.002" oninput="validity.valid || (value = '')" class="calInput" name="dose" placeholder="write here"><br/>
+                    <input id="dose" type="number" min="0" step="0.01" oninput="validity.valid || (value = '')" class="calInput" name="dose" placeholder="write here"><br/>
         
                     <label for="percent">Percentage purity of raw chlorine (%):</label>
-                    <input id="percentage" type="number" min="1" step="0.1" oninput="validity.valid || (value = '')" class="calInput" name="percent" placeholder="write here"><br/>
+                    <input id="percentage" type="number" min="1" step="1.00" oninput="validity.valid || (value = '')" class="calInput" name="percent" placeholder="write here"><br/>
                     
                     <label for="volume">Volume of raw water tank (Litres):</label><br/>
-                    <input id="volume" type="number" min="10" step="0.001" oninput="validity.valid || (value = '')" class="calInput" name="volume" placeholder="write here">
+                    <input id="volume" type="number" min="1" step="1.00" oninput="validity.valid || (value = '')" class="calInput" name="volume" placeholder="write here">
                     
                     <div class="buttondiv">
                     <button class="button1" onclick="calcMass()">Calculate</button> <button class="button1" onclick="calcClear()">Clear</button>
@@ -84,15 +84,23 @@
 
     <script>
         function calcMass() {
-            //parseFloat to turn the input to num
             var d = parseFloat(document.getElementById('dose').value);
             var p = parseFloat(document.getElementById('percentage').value);
             var v = parseFloat(document.getElementById('volume').value);
             var m1 = ((d * v) / (1000 * (p / 100)));
-            var m= m1.toFixed(4);
+            var m= m1.toFixed(2);
             if (isNaN(d) || isNaN(p) || isNaN(v)) {
                 document.getElementById('outPut').innerHTML = "Please enter valid values for all fields.";
+            } else if(v<5){
+                document.getElementById('outPut').style.color = "red";
+                document.getElementById('outPut').innerHTML = "Warning: The value for the volume of raw water must be up to 5!";
+            } else if(m<0.5){
+                document.getElementById('outPut').style.color = "";
+                mg1 = m*1000;
+                mg = mg1.toFixed(2);
+                document.getElementById('outPut').innerHTML = "You need " + mg + "mg of " + p + "% potency raw chlorine to get " + d + " ppm concentration in " + v + " Litres water container";
             } else {
+                document.getElementById('outPut').style.color = "";
                 document.getElementById('outPut').innerHTML = "You need " + m + "g of " + p + "% potency raw chlorine to get " + d + " ppm concentration in " + v + " Litres water container";
             }
         }
@@ -102,6 +110,7 @@
             document.getElementById('dose').value="";
             document.getElementById('percentage').value="";
             document.getElementById('volume').value="";
+            document.getElementById('outPut').style.color ="";
         }
     </script>
 </body>
