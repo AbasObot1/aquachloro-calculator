@@ -12,6 +12,12 @@ body {
     background-repeat: no-repeat;
     border-radius: 5px;
 }
+.navbar {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+.navbar a {
+    color: white !important;
+}
 h1{
     color: #FFFFFF;
     text-shadow: 2px 2px 4px #000000;

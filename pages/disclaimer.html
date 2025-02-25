@@ -8,11 +8,19 @@
     <meta content='Aquachloro Calculator' name='application-name'/>
     <meta name="keywords" content="aquachloro calculator, hydrochloro calculator, chlorine calculator, water treatment, drining water" />
     <title>disclaimer for Aquachloro Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <script src="../partials.js" type="text/javascript"></script>
     <style>
-        body{
+        /* body{
             background-image: url(../water3.jpg);
             text-align: left;
+        } */
+        .navbar {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        .navbar a {
+            color: white !important;
         }
         .main-section {
             padding: 5px;
@@ -28,7 +36,7 @@
             padding-left: 10px;
             padding-right: 10px;
         }
-        header{
+        .header-title{
             text-align: center;
         }
         
@@ -36,8 +44,10 @@
 </head>
 <body>
     <header>
-        <nav></nav>
-        <a href="../" style="text-decoration: none;" ><h1 style="color: #ffffff;">Aquachloro calculator disclaimer</h1></a>
+        <div id="header"></div>
+        <div class="header-title">
+            <a href="../" style="text-decoration: none;" ><h1 style="color: #0072ff;">Aquachloro calculator disclaimer</h1></a>
+        </div>
     </header>
     <hr/>
     <main class="main-section">
@@ -55,12 +65,17 @@
         </section>
     </main>
     
-    <footer style="text-align: center;"><br/>
+    <!-- <footer style="text-align: center;"><br/>
         <a href="../">Home</a> | <a href="../LICENSE.md" >License</a>
         <p style="color: #000000; text-shadow: 2px 2px 4px #ffffff; padding: 1.5rem;">
             Copyright &copy; 2024. 
                 <a href="https://abasobot1.github.io/abasiama-akpan" style="text-decoration: none;"> Abasiama Akpan (Abas Obot)</a>
         </p>
-    </footer>
+    </footer> -->
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

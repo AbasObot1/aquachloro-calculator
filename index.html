@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquachloro Calculator</title>
     <meta content='charset=UTF-8' http-equiv='Content-Type'/>
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
     <meta content='Abasiama Akpan (Abas Obot)' name='author'/>
@@ -15,78 +18,172 @@
     <meta content='https://abasobot1.github.io/aquachloro-calculator/' property='og:url'/>
     <meta content='Aquachloro Calculator' property='og:titile'/>
     <meta content='application' property='og:type'/>
-    <title>Aquachloro Calculator</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .main-section {
-            padding: 5px;
-            margin-left: 1px;
-            margin-right: 1px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            background-color: #ffffff;
-            
+        body {
+            background: #f8f9fa;
+            color: #343a40;
         }
-        
-        .section-2 {
-            color: #000000;
-            text-shadow: 2px 2px 4px #ffffff;
+        .navbar {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        .navbar a {
+            color: white !important;
+        }
+        .header {
+            /*background: linear-gradient(to right, #00c6ff, #0072ff);*/
+            background-image: url("./water3.jpg");
+            background-size: cover;
+            background-position: center bottom;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .features, .services {
+            margin: 50px 0;
+        }
+        .feature-item, .service-item {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .feature-item:hover, .service-item:hover {
+            transform: translateY(-10px);
+        }
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        .myCards{
+            margin-bottom: 10px;
+        }
+        h1{
+            text-shadow: 2px 2px 4px #000000;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="color: #ffffff;">Aquachloro Calculator</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Aquachloro Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Welcome to Aquachloro Calculator</h1>
+            <p style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);">Aquachloro Calculator is your ultimate solution for efficient and effective water treatment management.
+            This tool is created to assist with drinking water treatment, especially with Chlorine related calculations and other parameters necessary for potable water production.</p>
+            <!--img src="https://via.placeholder.com/800x400" width="800" height="400" alt="Water Treatment" class="img-fluid" -->
+        </div>
     </header>
-    <hr/>
-    <!--input type="text" id="searchInput">
-    <button onClick="performSearch()" >Search</button-->
-        
-        <section class="section1">
-            <div ><br/><br/>
-                <div class="calculator">
-                    <div id="outPut" class="outPut1"><b>What do you want to calculate?</b><br/><br/><hr/>
-                        A = Chlorine dose (Mass of raw chlorine that you need to treat water.)<br/><hr/>
-                        B = Concentration of chlorine in water.<br/><hr/>
-                        C = Chlorine demand
-                    </div>
-                    <div class="Input1">
-                        <p>Choose A, B, or C to begin your calculation.</p>
-                        <div class="buttondiv">
-                        <button class="button1" onclick="window.location=href='./chlorine-dose-calculator.html'">A</button> 
-                        <button class="button1" onclick="window.location=href='./chlorine-concentration-calculator.html'">B</button>
-                        <button class="button1" onclick="window.location=href='./chlorine-demand-calculator.html'">C</button>
-                        </div>
-                    </div>
-                </div><br/><br/>
+
+    <!-- Features Section -->
+    <section id="features" class="features container mx-auto">
+        <div class="text-center py-2"><h2>Water Treatment Tools</h2><hr></div>
+        <div class="row">
+            <div class="col-md-4 myCards">
+                <a href='./chlorine-dose-calculator.html' style="text-decoration: none !important;">
+                <div class="feature-item text-center">
+                    <h3>Chlorine Dose Calculator</h3>
+                    <!--img src="./icons/chlorine-dose1.svg" height="50px" width="auto">
+                    <svg height="100px" width="100px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#007bff" stroke="#007bff"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#F7EFE4" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="10.24"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#007bff;} </style> <g> <path class="st0" d="M331.787,0h-151.56c-19.766,0-35.853,16.08-35.853,35.862c0,12.78,6.73,24.018,16.835,30.363v3.244v347.734 c0,52.266,42.522,94.797,94.796,94.797c52.274,0,94.805-42.531,94.805-94.797V69.469v-3.244 c10.093-6.344,16.816-17.583,16.816-30.363C367.626,16.08,351.546,0,331.787,0z M333.786,71.646v74.93v270.627 c0,42.948-34.824,77.773-77.781,77.773c-42.952,0-77.772-34.825-77.772-77.773v-269.28V71.646v-4.631 c0.658,0.031,1.324,0.054,1.994,0.054h151.56c0.674,0,1.324-0.023,1.999-0.054V71.646z M340.663,52.453h-6.877H178.234h-6.898 c-5.918-3.176-9.937-9.411-9.937-16.591c0-10.402,8.427-18.829,18.829-18.829h151.56c10.398,0,18.829,8.427,18.829,18.829 C350.616,43.042,346.581,49.277,340.663,52.453z"></path> <path class="st0" d="M196.808,247.29v169.912c0,32.632,26.554,59.199,59.198,59.199c32.64,0,59.207-26.567,59.207-59.199v-171.09 C271.078,267.692,238.633,231.118,196.808,247.29z M223.111,352.869c0.011-6.545,5.332-11.858,11.885-11.843 c6.545,0.008,11.843,5.321,11.831,11.866c0,6.561-5.306,11.866-11.862,11.85C228.417,364.742,223.111,359.429,223.111,352.869z M241.595,433.251c-4.988,0-9.024-4.042-9.024-9.038c0.004-4.988,4.056-9.039,9.051-9.031c4.988,0.008,9.023,4.058,9.016,9.046 C250.638,429.216,246.591,433.259,241.595,433.251z M290.802,391.72c0,5.321-4.314,9.636-9.635,9.628 c-5.321,0-9.632-4.315-9.632-9.643c0-5.322,4.33-9.636,9.651-9.628C286.507,382.077,290.81,386.391,290.802,391.72z"></path> </g> </g></svg-->
+                    <svg height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#F7EFE4" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#E0DDDF;" d="M313.242,270.841H16.431c29.681,0,59.362-186.567,152.646-186.567S292.041,270.841,313.242,270.841z"></path> <g> <path style="fill:#C1BCBF;" d="M183.916,85.91c-4.76-1.07-9.704-1.637-14.84-1.637c-93.284,0-122.965,186.567-152.646,186.567 h29.681C74.158,270.841,102.206,104.255,183.916,85.91z"></path> <circle style="fill:#C1BCBF;" cx="230.559" cy="230.559" r="14.841"></circle> <circle style="fill:#C1BCBF;" cx="200.878" cy="175.437" r="14.841"></circle> <circle style="fill:#C1BCBF;" cx="166.957" cy="128.795" r="14.841"></circle> <circle style="fill:#C1BCBF;" cx="166.957" cy="230.559" r="14.841"></circle> <circle style="fill:#C1BCBF;" cx="133.035" cy="175.437" r="14.841"></circle> <circle style="fill:#C1BCBF;" cx="103.354" cy="230.559" r="14.841"></circle> </g> <path style="fill:#FF675C;" d="M504.05,268.72v29.681c0,5.851-4.749,10.6-10.6,10.6h-86.923V258.12h86.923 C499.301,258.12,504.05,262.869,504.05,268.72z"></path> <path style="fill:#DB3D5A;" d="M497.689,283.561h-86.923V258.12h-4.24v50.882h86.923c5.851,0,10.6-4.749,10.6-10.6v-16.977 C502.276,282.76,500.079,283.561,497.689,283.561z"></path> <path style="fill:#7ed0ec;" d="M313.242,270.841h8.48c0,86.648-70.238,156.886-156.886,156.886S7.95,357.488,7.95,270.841h8.48 H313.242z"></path> <path style="fill:#7ed0ec;" d="M54.592,270.841H16.431H7.95c0,86.648,70.238,156.886,156.886,156.886 c7.925,0,15.712-0.594,23.321-1.728C112.571,414.735,54.592,349.564,54.592,270.841z"></path> <path d="M493.449,250.17h-86.923c-4.392,0-7.95,3.559-7.95,7.95v13.251h-68.909c0-0.177,0.006-0.353,0.006-0.53 c0-4.392-3.559-7.95-7.95-7.95h-7.225c-4.329-4.094-12.383-24.353-18.905-40.763c-11.266-28.344-25.286-63.62-44.912-92.629 c-23.872-35.285-51.327-53.176-81.604-53.176c-31.497,0-61.258,20.438-86.065,59.106c-2.37,3.695-1.297,8.614,2.399,10.984 c1.329,0.853,2.815,1.259,4.286,1.259c2.617,0,5.18-1.292,6.698-3.658c22.047-34.365,46.502-51.79,72.682-51.79 c57.773,0,90.25,81.708,111.739,135.776c5.926,14.909,10.55,26.54,14.918,34.89H38.54c6.058-8.645,28.818-62.838,34.265-74.236 c1.893-3.961,0.217-8.708-3.744-10.601c-3.961-1.894-8.708-0.217-10.601,3.744c-5.602,11.722-28.278,65.78-33.814,73.231 c-2.8,3.766-6.05,6.398-9.665,7.862H7.95c-4.392,0-7.95,3.559-7.95,7.95c0,90.891,73.945,164.836,164.836,164.836 c85.346,0,155.747-65.2,164.019-148.406h69.72v21.731c0,4.392,3.559,7.95,7.95,7.95h86.923c10.228,0,18.551-8.322,18.551-18.551 V268.72C512,258.492,503.678,250.17,493.449,250.17z M164.836,419.776c-79.456,0-144.581-62.544-148.727-140.986h0.294 c0.008,0,0.018,0.002,0.027,0.002c0.008,0,0.017-0.002,0.025-0.002h297.107C309.418,357.233,244.293,419.776,164.836,419.776z M496.099,298.402c0,1.462-1.188,2.65-2.65,2.65h-78.973V266.07h78.973c1.462,0,2.65,1.188,2.65,2.65V298.402z"></path> <path d="M275.15,328.527c-3.665-2.413-8.596-1.399-11.013,2.267c-22.994,34.918-60.983,56.033-99.102,55.063 c-0.068-0.001-0.135-0.002-0.202-0.002c-4.298,0-7.836,3.429-7.944,7.752c-0.11,4.39,3.36,8.037,7.75,8.147 c0.957,0.023,1.911,0.035,2.867,0.035c42.596,0,84.495-23.653,109.913-62.25C279.832,335.872,278.816,330.942,275.15,328.527z"></path> <path d="M287.852,292.833c-4.247-1.123-8.594,1.419-9.711,5.666c-0.99,3.76-2.188,7.528-3.563,11.2 c-1.539,4.112,0.547,8.693,4.66,10.233c0.918,0.343,1.859,0.507,2.786,0.507c3.22,0,6.251-1.971,7.447-5.166 c1.561-4.171,2.924-8.454,4.047-12.729C294.634,298.298,292.099,293.951,287.852,292.833z"></path> </g></svg>
+                    <p>Calculate the mass of raw chlorine needed to obtain a desired concentration in water.</p>
+                </div>
+                </a>
             </div>
-        </section>
-    <main class="main-section">
-        <section class="section-2" style="text-align: left;">
-            <h2>How this tool works</h2>
-            <p>The Aquachloro calculator (water chlorination calculator) is intended as a general estimation tool to assist with drinking water, pool and spa chlorine 
-                treatment calculations. It employs the <a href="./pages/principle-of-chlorine-water-treatment.html">
-                principle of water treatment</a> through chlorination to perform its functions.
+            <div class="col-md-4 myCards">
+                <a href='./chlorine-concentration-calculator.html' style="text-decoration: none !important;">
+                <div class="feature-item text-center">
+                    <h3>Chlorine Conc. Calculator</h3>
+                    <svg height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#F7EFE4" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="SVGCleanerId_0" style="fill:#CCF7FF;" d="M419.705,448.366L312.386,211.372V38.468H199.614v172.904L92.295,448.366 C77.57,477.544,98.777,512,131.46,512h249.08C413.223,512,434.43,477.544,419.705,448.366z"></path> <g> <path id="SVGCleanerId_0_1_" style="fill:#CCF7FF;" d="M419.705,448.366L312.386,211.372V38.468H199.614v172.904L92.295,448.366 C77.57,477.544,98.777,512,131.46,512h249.08C413.223,512,434.43,477.544,419.705,448.366z"></path> </g> <polygon style="opacity:0.15;fill:#66E6FF;enable-background:new ;" points="199.614,83.162 312.386,83.162 312.386,83.162 312.386,38.468 199.614,38.468 "></polygon> <path style="fill:#66E6FF;" d="M312.386,0H199.614c-16.244,0-29.412,13.169-29.412,29.412s13.169,29.412,29.412,29.412h112.772 c16.244,0,29.412-13.169,29.412-29.412S328.63,0,312.386,0z"></path> <path style="fill:#FFF;" d="M392.257,461.5l-75.79-167.367H195.532L119.744,461.5l-0.288,0.573 c-2.945,5.837-0.917,10.718,0.554,13.107c1.47,2.39,4.915,6.399,11.453,6.399h249.08c6.538,0,9.982-4.01,11.453-6.399 c1.471-2.39,3.498-7.272,0.552-13.108L392.257,461.5z"></path> <g> <path style="fill:#66E6FF;" d="M236.36,276.37h-62.047c-5.041,0-9.126-4.086-9.126-9.126c0-5.04,4.085-9.126,9.126-9.126h62.047 c5.041,0,9.126,4.086,9.126,9.126C245.486,272.284,241.402,276.37,236.36,276.37z"></path> <path style="fill:#66E6FF;" d="M212.368,329.187h-62.047c-5.041,0-9.126-4.086-9.126-9.126c0-5.04,4.085-9.126,9.126-9.126h62.047 c5.041,0,9.126,4.086,9.126,9.126C221.494,325.101,217.409,329.187,212.368,329.187z"></path> <path style="fill:#66E6FF;" d="M188.375,382.004h-62.047c-5.041,0-9.126-4.086-9.126-9.126c0-5.04,4.085-9.126,9.126-9.126h62.047 c5.041,0,9.126,4.086,9.126,9.126C197.501,377.918,193.416,382.004,188.375,382.004z"></path> <path style="fill:#66E6FF;" d="M164.384,434.822h-62.047c-5.041,0-9.126-4.086-9.126-9.126c0-5.04,4.085-9.126,9.126-9.126h62.047 c5.041,0,9.126,4.086,9.126,9.126C173.51,430.735,169.424,434.822,164.384,434.822z"></path> </g> </g></svg>
+                    <p>Determine the exact concentration of chlorine in water after adding a measured amount into the tank.</p>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4 myCards">
+                <a href='./chlorine-demand-calculator.html' style="text-decoration: none !important;">
+                <div class="feature-item text-center">
+                    <h3>Chlorine Demand Calculator</h3>
+                    <svg width="100px" height="100px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#F7EFE4" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g opacity="0.5"> <path d="M20 17.0002C21.1046 17.0002 22 16.0674 22 14.9168C22 14.1969 21.217 13.2361 20.6309 12.6176C20.2839 12.2515 19.7161 12.2515 19.3691 12.6176C18.783 13.2361 18 14.1969 18 14.9168C18 16.0674 18.8954 17.0002 20 17.0002Z" fill="#007bff"></path> <path d="M16.278 10.5677L17.7828 7.97036L9.37268 3.14355L2.65093 14.7458C1.31093 17.0587 2.10615 20.0163 4.42709 21.3517C6.74803 22.687 9.7158 21.8946 11.0558 19.5816L12.1751 17.6497L16.278 10.5677Z" fill="#007bff"></path> </g> <path d="M9.2939 1.35449C8.93733 1.14371 8.47739 1.26188 8.2666 1.61845C8.05581 1.97502 8.17399 2.43495 8.53056 2.64574L9.36645 3.13989L9.37231 3.14332L17.7824 7.97013L18.6261 8.45434C18.9853 8.66053 19.4437 8.53644 19.6499 8.17719C19.8561 7.81794 19.732 7.35957 19.3727 7.15338L10.1256 1.84619L9.2939 1.35449Z" fill="#007bff"></path> <path d="M12.9271 16.3515L12.9253 16.3505L10.3126 14.8472C9.9536 14.6407 9.49509 14.7643 9.28852 15.1233C9.08195 15.4823 9.20555 15.9408 9.56457 16.1474L12.1752 17.6495L12.9271 16.3515Z" fill="#007bff"></path> <path d="M14.5647 13.525L14.5629 13.5239L10.3599 11.1057C10.0009 10.8992 9.54239 11.0227 9.33582 11.3818C9.12925 11.7408 9.25284 12.1993 9.61187 12.4059L13.8128 14.8229L14.5647 13.525Z" fill="#007bff"></path> <path d="M16.2763 10.5665L13.7183 9.09468C13.3592 8.88811 12.9007 9.0117 12.6941 9.37073C12.4876 9.72976 12.6112 10.1883 12.9702 10.3948L15.5262 11.8654L16.2763 10.5665Z" fill="#007bff"></path> </g></svg>
+                    <p>Calculate the amount of chlorine that your water treatment system requires to achieve a desired level of disinfection.</p>
+                </div>
+                </a>
+            </div>
+            <!--div class="col-md-4 myCards">
+                <div class="feature-item text-center">
+                    <h3>pH Level Monitoring</h3>
+                    <p>Monitor and adjust the pH levels to ensure safe water quality.</p>
+                </div>
+            </div>
+            <div class="col-md-4 myCards">
+                <div class="feature-item text-center">
+                    <h3>Water Quality Reports</h3>
+                    <p>Generate detailed reports on various water quality parameters.</p>
+                </div>
+            </div-->
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services container mx-auto">
+        <div class="text-center py-2"><h2>Water Treatment Services</h2><hr></div>
+        <div class="row" style="color: #007bff;">
+            <div class="col-md-4 myCards">
+                <div class="service-item text-center">
+                    <h3>Consultation</h3>
+                    <p>Expert advice on water treatment solutions and technologies.</p>
+                </div>
+            </div>
+            <div class="col-md-4 myCards">
+                <div class="service-item text-center">
+                    <h3>Installation</h3>
+                    <p>Professional installation of water treatment systems and factory setup.</p>
+                </div>
+            </div>
+            <div class="col-md-4 myCards">
+                <div class="service-item text-center">
+                    <h3>Maintenance</h3>
+                    <p>Regular maintenance services to ensure optimal performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <a href="./">Home</a> | <a href="./pages/principle-of-chlorine-water-treatment.html">Principle</a> | <a href="./pages/disclaimer.html">Disclaimer.</a> | <a href="./LICENSE.md" >License</a>
+        <div class="container">
+            <p>Copyright &copy; 2025. 
+                <a style="color: white;" href="https://abasobot1.github.io/abasiama-akpan" style="text-decoration: none;">Aquachloro Calculator. Designed by Abasiama Akpan (Abas Obot)</a>
             </p>
-            <button class="button2" onclick="window.location.href='./pages/about-aquachloro-calculator.html'">
-                Learn more</button><br/>
-                
-        </section>
-        <br/><br/>
-    </main>
-    <footer><br/>
-        <a href="./">Home</a> | <a href="./pages/disclaimer.html">Disclaimer.</a> | <a href="./LICENSE.md" >License</a>
-        <p style="color: #000000; text-shadow: 2px 2px 4px #ffffff;">
-            Copyright &copy; 2024. 
-                <a href="https://abasobot1.github.io/abasiama-akpan" style="text-decoration: none;">Abasiama Akpan (Abas Obot)</a>
-        </p>
-        </footer>
-    <!--script>
-        function performSearch() {
-            var query = document.getElementById('searchInput').value;
-            var searchUrl = 'https://abasobot1.github.io/aquachloro-calculator/search?q=' + encodeURIComponent(query);
-            window.location.href = searchUrl;
-        }
-    </script-->
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

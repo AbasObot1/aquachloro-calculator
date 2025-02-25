@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content='charset=UTF-8' http-equiv='Content-Type'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta content='Abasiama Akpan (Abas Obot)' name='author'/>
+    <meta content='Aquachloro Calculator' name='application-name'/>
+    <meta name="title" content="Aquachloro Calculator" />
+    <meta name="description" content="Aquachloro Calculator is a water treatment application created for the water industry by Abas Obot. 
+    This app can calculate several parameters needed for the chlorination process, including chlorine 
+    dose, concentration, and residual chlorine, and provide the solution in just one click." />
+    <meta name="keywords" content="aquachloro calculator, hydrochloro calculator, chlorine calculator, water treatment, drining water" />
+   <!--Open Graph Data-->
+    <meta content='https://abasobot1.github.io/aquachloro-calculator/water-app.png' property='og:image'/>
+    <meta content='https://abasobot1.github.io/aquachloro-calculator/' property='og:url'/>
+    <meta content='Aquachloro Calculator' property='og:titile'/>
+    <meta content='application' property='og:type'/>
+    <title>Aquachloro Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+        .main-section {
+            padding: 5px;
+            margin-left: 1px;
+            margin-right: 1px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            
+        }
+        
+        .section-2 {
+            color: #000000;
+            text-shadow: 2px 2px 4px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: #ffffff;">Aquachloro Calculator</h1>
+    </header>
+    <hr/>
+    <!--input type="text" id="searchInput">
+    <button onClick="performSearch()" >Search</button-->
+        
+        <section class="section1">
+            <div ><br/><br/>
+                <div class="calculator">
+                    <div id="outPut" class="outPut1"><b>What do you want to calculate?</b><br/><br/><hr/>
+                        A = Chlorine dose (Mass of raw chlorine that you need to treat water.)<br/><hr/>
+                        B = Concentration of chlorine in water.<br/><hr/>
+                        C = Chlorine demand
+                    </div>
+                    <div class="Input1">
+                        <p>Choose A, B, or C to begin your calculation.</p>
+                        <div class="buttondiv">
+                        <button class="button1" onclick="window.location=href='./chlorine-dose-calculator.html'">A</button> 
+                        <button class="button1" onclick="window.location=href='./chlorine-concentration-calculator.html'">B</button>
+                        <button class="button1" onclick="window.location=href='./chlorine-demand-calculator.html'">C</button>
+                        </div>
+                    </div>
+                </div><br/><br/>
+            </div>
+        </section>
+    <main class="main-section">
+        <section class="section-2" style="text-align: left;">
+            <h2>How this tool works</h2>
+            <p>The Aquachloro calculator (water chlorination calculator) is intended as a general estimation tool to assist with drinking water, pool and spa chlorine 
+                treatment calculations. It employs the <a href="./pages/principle-of-chlorine-water-treatment.html">
+                principle of water treatment</a> through chlorination to perform its functions.
+            </p>
+            <button class="button2" onclick="window.location.href='./pages/about-aquachloro-calculator.html'">
+                Learn more</button><br/>
+                
+        </section>
+        <br/><br/>
+    </main>
+    <footer><br/>
+        <a href="./">Home</a> | <a href="./pages/disclaimer.html">Disclaimer.</a> | <a href="./LICENSE.md" >License</a>
+        <p style="color: #000000; text-shadow: 2px 2px 4px #ffffff;">
+            Copyright &copy; 2024. 
+                <a href="https://abasobot1.github.io/abasiama-akpan" style="text-decoration: none;">Abasiama Akpan (Abas Obot)</a>
+        </p>
+        </footer>
+    <!--script>
+        function performSearch() {
+            var query = document.getElementById('searchInput').value;
+            var searchUrl = 'https://abasobot1.github.io/aquachloro-calculator/search?q=' + encodeURIComponent(query);
+            window.location.href = searchUrl;
+        }
+    </script-->
+</body>
+</html>
